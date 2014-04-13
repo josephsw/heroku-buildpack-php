@@ -123,6 +123,9 @@ if [ -d www/.heroku ]; then
   done
 fi
 
+php/bin/pear install mail
+php/bin/pear install Net_SMTP
+
 echo "Launching PHP FPM"
 /app/php/sbin/php-fpm -y /app/php/etc/php-fpm.conf -c /app/php/php.ini
 
